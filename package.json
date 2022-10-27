@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "example": "prettier --plugin . example.toml",
+    "example": "prettier --plugin . example.hbs",
     "test": "jest"
   },
   "keywords": [
@@ -18,7 +18,12 @@
   },
   "license": "MIT",
   "dependencies": {
-    "prettier": "^1.15.3",
+    "@glimmer/syntax": "0.84.2",
+    "lines-and-columns": "2.0.3",
+    "linguist-languages": "7.21.0",
+    "outdent": "0.8.0",
+    "semver": "7.3.7",
+    "prettier": "^2.7.1",
     "toml": "^2.3.5"
   },
   "devDependencies": {

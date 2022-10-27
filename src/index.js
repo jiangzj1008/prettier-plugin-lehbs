@@ -7,30 +7,35 @@ const {
 
 const languages = [
   {
-    extensions: ['.toml'],
-    name: 'TOML',
+    extensions: ['.hbs'],
+    name: 'handlebars',
     parsers: ['toml-parse']
   }
 ]
 
 const parsers = {
   'toml-parse': {
-    parse: text => parser.parse(text),
+    parse: text => text,
     astFormat: 'toml-ast'
   }
 }
 
 function printToml(path, options, print) {
-  const node = path.getValue()
 
-  if (Array.isArray(node)) {
-    return concat(path.map(print))
-  }
+  console.log('abc');
 
-  switch (node.type) {
-    default:
-      return ''
-  }
+  return 'hello'
+
+  // const node = path.getValue()
+
+  // if (Array.isArray(node)) {
+  //   return concat(path.map(print))
+  // }
+
+  // switch (node.type) {
+  //   default:
+  //     return ''
+  // }
 }
 
 const printers = {
