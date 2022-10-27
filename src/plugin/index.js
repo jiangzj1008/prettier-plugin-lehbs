@@ -1,19 +1,23 @@
 "use strict";
 
 const createLanguage = require("../utils/create-language.js");
-const printer = require("./printer-glimmer.js");
-const parsers = require("./parsers.js");
+const printer = require("./printer.js");
+const parser = require("./parser.js");
 
 const languages = [
   createLanguage(require("linguist-languages/data/Handlebars.json"), () => ({
     since: "2.3.0",
-    parsers: ["glimmer"],
+    parsers: ["lehbs-parser"],
     vscodeLanguageIds: ["handlebars"],
   })),
 ];
 
+const parsers = {
+  'lehbs-parser': parser
+}
+
 const printers = {
-  glimmer: printer,
+  'lehbs-ast': printer,
 };
 
 module.exports = {

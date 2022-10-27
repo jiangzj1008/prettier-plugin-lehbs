@@ -19,11 +19,12 @@
   "license": "MIT",
   "dependencies": {
     "@glimmer/syntax": "0.84.2",
+    "lehbs-parser": "^0.0.5",
     "lines-and-columns": "2.0.3",
     "linguist-languages": "7.21.0",
     "outdent": "0.8.0",
-    "semver": "7.3.7",
     "prettier": "^2.7.1",
+    "semver": "7.3.7",
     "toml": "^2.3.5"
   },
   "devDependencies": {

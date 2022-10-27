@@ -36,7 +36,10 @@ const NEWLINES_TO_PRESERVE_MAX = 2;
 // https://github.com/glimmerjs/glimmer-vm/blob/master/packages/%40glimmer/syntax/lib/generation/print.ts
 
 function print(path, options, print) {
+  console.log('gelog')
+
   const node = path.getValue();
+
 
   /* istanbul ignore if*/
   if (!node) {

@@ -50,7 +50,7 @@ function addOffset(text) {
 }
 
 function parse(text) {
-  const { preprocess: glimmer } = require("@glimmer/syntax");
+  const { preprocess: glimmer } = require("lehbs-parser");
   let ast;
   try {
     ast = glimmer(text, {
@@ -90,12 +90,8 @@ function getErrorLocation(error) {
 }
 
 module.exports = {
-  parsers: {
-    glimmer: {
-      parse,
-      astFormat: "glimmer",
-      locStart,
-      locEnd,
-    },
-  },
+  parse,
+  astFormat: "lehbs-ast",
+  locStart,
+  locEnd,
 };

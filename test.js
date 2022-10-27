@@ -1,5 +1,6 @@
 const {format} = require('prettier')
 const plugin = require('./src/plugin/index')
+const plugin_1 = require('./src/index')
 
 // const myCustomPlugin = {
 //   parsers: {
@@ -14,9 +15,13 @@ const plugin = require('./src/plugin/index')
 //   },
 // };
 
-const str = format("<div></div>", {
-  parser: "glimmer",
-  plugins: [plugin],
+const text = `
+<div >
+`
+
+const str = format(text, {
+  parser: "lehbs-parser",
+  plugins: [plugin, plugin_1],
 });
 
 console.log(str)
