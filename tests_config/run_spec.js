@@ -5,6 +5,7 @@ const fs = require('fs');
 const path = require('path');
 
 const prettier = require('prettier');
+const plugin = require('../src/plugin/index')
 
 function run_spec(dirname, options) {
   fs.readdirSync(dirname).forEach(filename => {
@@ -53,14 +54,22 @@ function run_spec(dirname, options) {
 global.run_spec = run_spec;
 
 function prettyprint(src, options) {
-  const result = prettier.formatWithCursor(src, options);
-  if (options.cursorOffset >= 0) {
-    result.formatted =
-      result.formatted.slice(0, result.cursorOffset) +
-      '<|>' +
-      result.formatted.slice(result.cursorOffset);
-  }
-  return result.formatted;
+  // const result = prettier.formatWithCursor(src, options);
+
+  // if (options.cursorOffset >= 0) {
+  //   result.formatted =
+  //     result.formatted.slice(0, result.cursorOffset) +
+  //     '<|>' +
+  //     result.formatted.slice(result.cursorOffset);
+  // }
+  // return result.formatted;
+
+  const result = prettier.format(src, {
+    parser: "lehbs-parser",
+    plugins: [plugin],
+  });
+
+  return result
 }
 
 function read(filename) {

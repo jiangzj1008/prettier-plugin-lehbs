@@ -1,27 +1,18 @@
 const {format} = require('prettier')
 const plugin = require('./src/plugin/index')
-const plugin_1 = require('./src/index')
-
-// const myCustomPlugin = {
-//   parsers: {
-//     "my-custom-parser": {
-//       parse(text) {
-//         const ast = parserBabel.parsers.babel.parse(text);
-//         ast.program.body[0].expression.callee.name = "_";
-//         return ast;
-//       },
-//       astFormat: "estree",
-//     },
-//   },
-// };
 
 const text = `
-<div >
+{{#if valid}}
+{{#if valid}}
+<div>
+<div>
+{{/if}}
+{{/if}}
 `
 
 const str = format(text, {
   parser: "lehbs-parser",
-  plugins: [plugin, plugin_1],
+  plugins: [plugin],
 });
 
 console.log(str)

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`openedEndTag.handlebars 1`] = `
+{{#if valid}}
+</div>
+{{/if}}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+{{#if valid}}
+  </div>
+{{/if}}
+`;
+
+exports[`openedStartTag.handlebars 1`] = `
+{{#if valid}}
+<div>
+{{/if}}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+{{#if valid}}
+  <div>
+{{/if}}
+`;
