@@ -36,7 +36,32 @@ const NEWLINES_TO_PRESERVE_MAX = 2;
 // https://github.com/glimmerjs/glimmer-vm/blob/master/packages/%40glimmer/syntax/lib/generation/print.ts
 
 function print(path, options, print) {
-  console.log('gelog')
+
+  // return group(
+  //   [
+  //     ["  ["],
+  //     indent(
+  //       [
+  //         line,
+  //         "hey",
+  //         dedent([
+  //           line,
+  //           join(
+  //             [",", hardline],
+  //             ["hello", "gua"]
+  //           )
+  //         ])
+  //       ]
+  //     ),
+  //     indent(
+  //       [
+  //         line,
+  //         "]"
+  //       ]
+  //     )
+  //   ]
+  // );
+  
 
   const node = path.getValue();
 
@@ -73,6 +98,23 @@ function print(path, options, print) {
       }
 
       const endingTag = ["</", node.tag, ">"];
+
+      if (node.opened) {
+        // todo support end tag
+        if (node.openedType === 'endTag') {
+          return [
+            indent(group(printChildren(path, options, print))),
+            indent(endingTag),
+            escapeNextElementNode,
+          ];
+        } else {
+          return [
+            startingTag,
+            indent(group(printChildren(path, options, print))),
+            escapeNextElementNode,
+          ];
+        }
+      }
 
       if (node.children.length === 0) {
         return [startingTag, indent(endingTag), escapeNextElementNode];
@@ -263,6 +305,15 @@ function print(path, options, print) {
 
           if (isLastNodeOfSiblings(path)) {
             breaks = breaks.map((newline) => dedent(newline));
+
+            // opened tag should dedent at end in each level
+            let parentIndex = 0
+            let parent = path.getParentNode(parentIndex)
+            while (parent.type === 'ElementNode' && parent.opened) {
+              breaks = breaks.map((newline) => dedent(newline));  
+              parentIndex += 1
+              parent = path.getParentNode(parentIndex)
+            }
           }
 
           return breaks;
