@@ -100,10 +100,12 @@ function print(path, options, print) {
       const endingTag = ["</", node.tag, ">"];
 
       if (node.opened) {
-        // todo support end tag
         if (node.openedType === 'endTag') {
+          const noChild = node.children.length === 0
+          let childStr = noChild ? "" : indent(group(printChildren(path, options, print)))
+          
           return [
-            indent(group(printChildren(path, options, print))),
+            childStr,
             indent(endingTag),
             escapeNextElementNode,
           ];
@@ -309,7 +311,7 @@ function print(path, options, print) {
             // opened tag should dedent at end in each level
             let parentIndex = 0
             let parent = path.getParentNode(parentIndex)
-            while (parent.type === 'ElementNode' && parent.opened) {
+            while (parent.type === 'ElementNode' && parent.opened && parent.openedType === "startTag") {
               breaks = breaks.map((newline) => dedent(newline));  
               parentIndex += 1
               parent = path.getParentNode(parentIndex)

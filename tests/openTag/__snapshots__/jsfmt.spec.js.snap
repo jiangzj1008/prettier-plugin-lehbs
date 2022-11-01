@@ -2,20 +2,32 @@
 
 exports[`openedEndTag.handlebars 1`] = `
 {{#if valid}}
+{{#if valid}}
 </div>
+</div>
+{{/if}}
 {{/if}}
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 {{#if valid}}
-  </div>
+  {{#if valid}}
+      </div>
+    </div>
+  {{/if}}
 {{/if}}
 `;
 
 exports[`openedStartTag.handlebars 1`] = `
 {{#if valid}}
+{{#if valid}}
 <div>
+<div>
+{{/if}}
 {{/if}}
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 {{#if valid}}
-  <div>
+  {{#if valid}}
+    <div>
+      <div>
+  {{/if}}
 {{/if}}
 `;
