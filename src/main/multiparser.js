@@ -2,7 +2,7 @@
 
 const {
   utils: { stripTrailingHardline },
-} = require("../document/index.js");
+} = require("prettier").doc;
 const { normalize } = require("./options.js");
 const comments = require("./comments.js");
 

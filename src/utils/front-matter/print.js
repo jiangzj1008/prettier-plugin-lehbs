@@ -2,7 +2,7 @@
 
 const {
   builders: { hardline, markAsRoot },
-} = require("../../document/index.js");
+} = require("prettier").doc;
 
 function print(node, textToDoc) {
   if (node.lang === "yaml") {

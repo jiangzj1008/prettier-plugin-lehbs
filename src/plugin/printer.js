@@ -13,7 +13,7 @@ const {
     softline,
   },
   utils: { getDocParts, replaceTextEndOfLine },
-} = require("../document/index.js");
+} = require("prettier").doc;;
 const { getPreferredQuote, isNonEmptyArray } = require("../common/util.js");
 const { locStart, locEnd } = require("./loc.js");
 const clean = require("./clean.js");
@@ -103,7 +103,7 @@ function print(path, options, print) {
         if (node.openedType === 'endTag') {
           const noChild = node.children.length === 0
           let childStr = noChild ? "" : indent(group(printChildren(path, options, print)))
-          
+
           return [
             childStr,
             indent(endingTag),

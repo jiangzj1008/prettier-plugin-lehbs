@@ -4,7 +4,7 @@ const assert = require("assert");
 
 const {
   builders: { line, hardline, breakParent, indent, lineSuffix, join, cursor },
-} = require("../document/index.js");
+} = require("prettier").doc;
 
 const {
   hasNewline,

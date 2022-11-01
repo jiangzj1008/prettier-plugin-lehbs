@@ -5,7 +5,7 @@ const { diffArrays } = require("diff");
 const {
   printer: { printDocToString },
   debug: { printDocToDebug },
-} = require("../document/index.js");
+} = require("prettier").doc;
 const { getAlignmentSize } = require("../common/util.js");
 const {
   guessEndOfLine,
