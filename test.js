@@ -3,10 +3,8 @@ const plugin = require('./src/plugin/index')
 
 const text = `
 {{#if valid}}
-{{#if valid}}
-<div>
-<div>
-{{/if}}
+<{{tag}}>
+</{{tag}}>
 {{/if}}
 `
 

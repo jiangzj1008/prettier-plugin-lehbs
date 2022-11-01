@@ -40,9 +40,10 @@ function isGlimmerComponent(node) {
 const voidTags = new Set(htmlVoidElements);
 function isVoid(node) {
   return (
-    voidTags.has(node.tag) ||
+    !node.isDynamic &&
+    (voidTags.has(node.tag) ||
     (isGlimmerComponent(node) &&
-      node.children.every((node) => isWhitespaceNode(node)))
+      node.children.every((node) => isWhitespaceNode(node))))
   );
 }
 

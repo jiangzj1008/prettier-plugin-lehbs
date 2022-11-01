@@ -29,13 +29,14 @@ const {
   isVoid,
   isWhitespaceNode,
 } = require("./utils.js");
+const AstPath = require("../common/ast-path.js");
 
 const NEWLINES_TO_PRESERVE_MAX = 2;
 
 // Formatter based on @glimmerjs/syntax's built-in test formatter:
 // https://github.com/glimmerjs/glimmer-vm/blob/master/packages/%40glimmer/syntax/lib/generation/print.ts
 
-function print(path, options, print) {
+function myprint(path, options, print) {
 
   // return group(
   //   [
@@ -62,9 +63,7 @@ function print(path, options, print) {
   //   ]
   // );
   
-
   const node = path.getValue();
-
 
   /* istanbul ignore if*/
   if (!node) {
@@ -97,7 +96,16 @@ function print(path, options, print) {
         return [startingTag, escapeNextElementNode];
       }
 
-      const endingTag = ["</", node.tag, ">"];
+      let tagName = node.tag
+      if (node.isDynamic) {
+        const tagPath = new AstPath(node.parts[0])
+        const name = myprint(tagPath, options, print)
+        console.log('gelog', 'tagPath', JSON.stringify(tagPath, null, 2));
+        console.log('gelog', 'path', name);
+
+        tagName = name
+      }
+      const endingTag = ["</", tagName, ">"];
 
       if (node.opened) {
         if (node.openedType === 'endTag') {
@@ -483,6 +491,25 @@ function sortByLoc(a, b) {
   return locStart(a) - locStart(b);
 }
 
+function printMustacheStatement(node) {
+  // const p = node.original;
+  // const params = printParams(path, print);
+
+  // if (params) {
+  //   return p;
+  // }
+
+  // const pathAndParams = [indent([p, line, params]), softline];
+
+  return group([
+    printOpeningMustache(node),
+    "dymanic",
+    // pathAndParams,
+    // printPathAndParams(path, print),
+    printClosingMustache(node),
+  ]);
+}
+
 function printStartingTag(path, print) {
   const node = path.getValue();
 
@@ -502,7 +529,9 @@ function printStartingTag(path, print) {
     attributes.push(line, printBlockParams(node));
   }
 
-  return ["<", node.tag, indent(attributes), printStartingTagEndMarker(node)];
+  const tagName = node.isDynamic ? printMustacheStatement(node) : node.tag
+
+  return ["<", tagName, indent(attributes), printStartingTagEndMarker(node)];
 }
 
 function printChildren(path, options, print) {
@@ -846,6 +875,6 @@ function printBlockParams(node) {
 }
 
 module.exports = {
-  print,
+  print: myprint,
   massageAstNode: clean,
 };
