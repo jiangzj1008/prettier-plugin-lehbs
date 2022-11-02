@@ -4,6 +4,8 @@ const plugin = require('./src/plugin/index')
 const text = `
 {{#if valid}}
 <{{tag}}>
+<div>
+</div>
 </{{tag}}>
 {{/if}}
 `

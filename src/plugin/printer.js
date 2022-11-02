@@ -29,7 +29,6 @@ const {
   isVoid,
   isWhitespaceNode,
 } = require("./utils.js");
-const AstPath = require("../common/ast-path.js");
 
 const NEWLINES_TO_PRESERVE_MAX = 2;
 
@@ -96,15 +95,7 @@ function myprint(path, options, print) {
         return [startingTag, escapeNextElementNode];
       }
 
-      let tagName = node.tag
-      if (node.isDynamic) {
-        const tagPath = new AstPath(node.parts[0])
-        const name = myprint(tagPath, options, print)
-        console.log('gelog', 'tagPath', JSON.stringify(tagPath, null, 2));
-        console.log('gelog', 'path', name);
-
-        tagName = name
-      }
+      const tagName = printTagName(path, print)
       const endingTag = ["</", tagName, ">"];
 
       if (node.opened) {
@@ -491,25 +482,6 @@ function sortByLoc(a, b) {
   return locStart(a) - locStart(b);
 }
 
-function printMustacheStatement(node) {
-  // const p = node.original;
-  // const params = printParams(path, print);
-
-  // if (params) {
-  //   return p;
-  // }
-
-  // const pathAndParams = [indent([p, line, params]), softline];
-
-  return group([
-    printOpeningMustache(node),
-    "dymanic",
-    // pathAndParams,
-    // printPathAndParams(path, print),
-    printClosingMustache(node),
-  ]);
-}
-
 function printStartingTag(path, print) {
   const node = path.getValue();
 
@@ -517,6 +489,8 @@ function printStartingTag(path, print) {
     isNonEmptyArray(node[property])
   );
   const attributes = types.flatMap((type) => node[type]).sort(sortByLoc);
+
+  const tagName = printTagName(path, print)
 
   for (const attributeType of types) {
     path.each((attributePath) => {
@@ -529,9 +503,21 @@ function printStartingTag(path, print) {
     attributes.push(line, printBlockParams(node));
   }
 
-  const tagName = node.isDynamic ? printMustacheStatement(node) : node.tag
-
   return ["<", tagName, indent(attributes), printStartingTagEndMarker(node)];
+}
+
+function printTagName(path, print) {
+  const node = path.getValue();
+
+  let tagName = node.tag
+
+  if (node.isDynamic) {
+    path.each(() => {
+      tagName = [print()]
+    }, "parts");
+  }
+
+  return tagName
 }
 
 function printChildren(path, options, print) {

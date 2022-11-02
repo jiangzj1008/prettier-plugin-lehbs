@@ -3,15 +3,15 @@
 exports[`dynamicTag.handlebars 1`] = `
 {{#if valid}}
 {{#if valid}}
-<div>
-<div>
+<{{tag}}>
+</{{tag}}>
 {{/if}}
 {{/if}}
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 {{#if valid}}
   {{#if valid}}
-    <div>
-      <div>
+    <{{tag}}>
+    </{{tag}}>
   {{/if}}
 {{/if}}
 `;
