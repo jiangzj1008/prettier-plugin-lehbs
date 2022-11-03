@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`blockAttr.handlebars 1`] = `
+<div style="background: white; display:block;" class="{{#if valid}}active{{else}}deactive{{/if}} container {{cls}} wrapper {{#if valid}}active{{else}}deactive{{/if}}">
+    test block attr
+</div>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<div
+  style="background: white; display:block;"
+  class="{{#if valid}}active{{else}}deactive{{/if}}
+    container
+    {{cls}}
+    wrapper
+    {{#if valid}}active{{else}}deactive{{/if}}"
+>
+  test block attr
+</div>
+`;

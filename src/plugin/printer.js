@@ -251,13 +251,13 @@ function myprint(path, options, print) {
 
           if (isParentOfSomeType(path, ["ConcatStatement"])) {
             if (
-              isPreviousNodeOfSomeType(path, ["MustacheStatement"]) &&
+              isPreviousNodeOfSomeType(path, ["MustacheStatement", "BlockStatement"]) &&
               /^\s/.test(text)
             ) {
               leadingSpace = true;
             }
             if (
-              isNextNodeOfSomeType(path, ["MustacheStatement"]) &&
+              isNextNodeOfSomeType(path, ["MustacheStatement", "BlockStatement"]) &&
               /\s$/.test(text) &&
               formattedClasses !== ""
             ) {
