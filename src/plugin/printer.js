@@ -29,6 +29,7 @@ const {
   isVoid,
   isWhitespaceNode,
 } = require("./utils.js");
+const _ = require("lodash");
 
 const NEWLINES_TO_PRESERVE_MAX = 2;
 
@@ -445,6 +446,17 @@ function myprint(path, options, print) {
       ];
     }
     case "PathExpression": {
+      let _parts = node.original.split(".")
+      const hasDot = node.original.indexOf(".") > 0 && _.isEqual(node.parts, _parts)
+      if (hasDot) {
+        _parts = _parts.map(item => {
+          if (Number(item) || item === '0') {
+            return `[${item}]`
+          }
+          return item
+        })
+        return _parts.join('.')
+      }
       return node.original;
     }
     case "BooleanLiteral": {

@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`blockAttr.handlebars 1`] = `
+{{#if imageList.[0].[1]}}
+{{#if valid}}
+<{{tag}}>
+</{{tag}}>
+{{/if}}
+{{/if}}
+
+{{#if imageList.[0] a.b}}
+{{#if valid}}
+<{{tag}}>
+</{{tag}}>
+{{/if}}
+{{/if}}
+
+{{#if imageList.[0].c a.b.[9]}}
+{{#if valid}}
+<{{tag}}>
+</{{tag}}>
+{{/if}}
+{{/if}}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+{{#if imageList.[0].[1]}}
+  {{#if valid}}
+    <{{tag}}>
+    </{{tag}}>
+  {{/if}}
+{{/if}}
+
+{{#if imageList.[0] a.b}}
+  {{#if valid}}
+    <{{tag}}>
+    </{{tag}}>
+  {{/if}}
+{{/if}}
+
+{{#if imageList.[0].c a.b.[9]}}
+  {{#if valid}}
+    <{{tag}}>
+    </{{tag}}>
+  {{/if}}
+{{/if}}
+`;
