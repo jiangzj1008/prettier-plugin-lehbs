@@ -1,0 +1,637 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`basics.hbs 1`] = `
+<GlimmerComponent @progress={{aPropertyEngdingAfterEightiethColumnToHighlightAWeirdClosingParenIssue}}
+/>
+
+<GlimmerComponent
+  class="medium"
+  @autocomplete="off"
+  @errors={{or this.aLProp (and this.aProperty (v-get bike "number" "message"))}}
+  data-test-beneficiary-account-number
+/>
+
+<GlimmerComponent
+  class="medium"
+  @autocomplete="off"
+  @errors={{or this.aVeryLongProperty (and this.aProperty (v-get bike "number" "message"))}}
+  data-test-beneficiary-account-number
+/>
+
+<div class="a long list of classes more than 80 chars with a complex mustache statement {{if (or this.a this.b) this.c this.d}}">
+</div>
+
+<div class="a multi line list of classes with a complex mustache statement
+           {{if (or this.a this.b) this.c this.d}}">
+</div>
+
+<div class="a-first-class {{if this.optionOne "optionOne"}} {{if this.optionTwo "optionTwo"}} {{if this.optionThree "optionThree"}} {{if this.optionFour "optionFour"}} {{if this.optionFive "optionFive"}} {{this.class}}" ...attributes >
+</div>
+
+<div
+  class="a-first-class
+    {{if this.optionOne "optionOne"}}
+    
+    {{if this.optionTwo "optionTwo"}}
+    
+    {{if this.optionThree "optionThree"}}
+    
+    {{if this.optionFour "optionFour"}}
+    
+    {{if this.optionFive "optionFive"}}
+    
+    {{this.class}}"
+  ...attributes >
+</div>
+
+<div>
+  {{classic-component-with-many-properties
+    class="hello"
+    param=this.someValue
+    secondParam=this.someValue
+    thirdParam=this.someValue
+  }}
+</div>
+
+<div>
+  {{yield (hash
+    title=(component title)
+    header=(component header)
+    language=(component language)
+  )}}
+</div>
+
+<div>
+  {{a-helper "that takes some arguments" this.anotherOne "why not" @aLastOneLongEnoughToBreak}}
+</div>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<GlimmerComponent
+  @progress={{aPropertyEngdingAfterEightiethColumnToHighlightAWeirdClosingParenIssue}}
+/>
+
+<GlimmerComponent
+  class="medium"
+  @autocomplete="off"
+  @errors={{or
+    this.aLProp
+    (and this.aProperty (v-get bike "number" "message"))
+  }}
+  data-test-beneficiary-account-number
+/>
+
+<GlimmerComponent
+  class="medium"
+  @autocomplete="off"
+  @errors={{or
+    this.aVeryLongProperty
+    (and this.aProperty (v-get bike "number" "message"))
+  }}
+  data-test-beneficiary-account-number
+/>
+
+<div
+  class="a long list of classes more than 80 chars with a complex mustache statement
+    {{if (or this.a this.b) this.c this.d}}"
+>
+</div>
+
+<div
+  class="a multi line list of classes with a complex mustache statement
+    {{if (or this.a this.b) this.c this.d}}"
+>
+</div>
+
+<div
+  class="a-first-class
+    {{if this.optionOne 'optionOne'}}
+    {{if this.optionTwo 'optionTwo'}}
+    {{if this.optionThree 'optionThree'}}
+    {{if this.optionFour 'optionFour'}}
+    {{if this.optionFive 'optionFive'}}
+    {{this.class}}"
+  ...attributes
+>
+</div>
+
+<div
+  class="a-first-class
+    {{if this.optionOne 'optionOne'}}
+    {{if this.optionTwo 'optionTwo'}}
+    {{if this.optionThree 'optionThree'}}
+    {{if this.optionFour 'optionFour'}}
+    {{if this.optionFive 'optionFive'}}
+    {{this.class}}"
+  ...attributes
+>
+</div>
+
+<div>
+  {{classic-component-with-many-properties
+    class="hello"
+    param=this.someValue
+    secondParam=this.someValue
+    thirdParam=this.someValue
+  }}
+</div>
+
+<div>
+  {{yield
+    (hash
+      title=(component title)
+      header=(component header)
+      language=(component language)
+    )
+  }}
+</div>
+
+<div>
+  {{a-helper
+    "that takes some arguments"
+    this.anotherOne
+    "why not"
+    @aLastOneLongEnoughToBreak
+  }}
+</div>
+`;
+
+exports[`basics.hbs 2`] = `
+<GlimmerComponent @progress={{aPropertyEngdingAfterEightiethColumnToHighlightAWeirdClosingParenIssue}}
+/>
+
+<GlimmerComponent
+  class="medium"
+  @autocomplete="off"
+  @errors={{or this.aLProp (and this.aProperty (v-get bike "number" "message"))}}
+  data-test-beneficiary-account-number
+/>
+
+<GlimmerComponent
+  class="medium"
+  @autocomplete="off"
+  @errors={{or this.aVeryLongProperty (and this.aProperty (v-get bike "number" "message"))}}
+  data-test-beneficiary-account-number
+/>
+
+<div class="a long list of classes more than 80 chars with a complex mustache statement {{if (or this.a this.b) this.c this.d}}">
+</div>
+
+<div class="a multi line list of classes with a complex mustache statement
+           {{if (or this.a this.b) this.c this.d}}">
+</div>
+
+<div class="a-first-class {{if this.optionOne "optionOne"}} {{if this.optionTwo "optionTwo"}} {{if this.optionThree "optionThree"}} {{if this.optionFour "optionFour"}} {{if this.optionFive "optionFive"}} {{this.class}}" ...attributes >
+</div>
+
+<div
+  class="a-first-class
+    {{if this.optionOne "optionOne"}}
+    
+    {{if this.optionTwo "optionTwo"}}
+    
+    {{if this.optionThree "optionThree"}}
+    
+    {{if this.optionFour "optionFour"}}
+    
+    {{if this.optionFive "optionFive"}}
+    
+    {{this.class}}"
+  ...attributes >
+</div>
+
+<div>
+  {{classic-component-with-many-properties
+    class="hello"
+    param=this.someValue
+    secondParam=this.someValue
+    thirdParam=this.someValue
+  }}
+</div>
+
+<div>
+  {{yield (hash
+    title=(component title)
+    header=(component header)
+    language=(component language)
+  )}}
+</div>
+
+<div>
+  {{a-helper "that takes some arguments" this.anotherOne "why not" @aLastOneLongEnoughToBreak}}
+</div>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<GlimmerComponent
+  @progress={{aPropertyEngdingAfterEightiethColumnToHighlightAWeirdClosingParenIssue}}
+/>
+
+<GlimmerComponent
+  class='medium'
+  @autocomplete='off'
+  @errors={{or
+    this.aLProp
+    (and this.aProperty (v-get bike 'number' 'message'))
+  }}
+  data-test-beneficiary-account-number
+/>
+
+<GlimmerComponent
+  class='medium'
+  @autocomplete='off'
+  @errors={{or
+    this.aVeryLongProperty
+    (and this.aProperty (v-get bike 'number' 'message'))
+  }}
+  data-test-beneficiary-account-number
+/>
+
+<div
+  class='a long list of classes more than 80 chars with a complex mustache statement
+    {{if (or this.a this.b) this.c this.d}}'
+>
+</div>
+
+<div
+  class='a multi line list of classes with a complex mustache statement
+    {{if (or this.a this.b) this.c this.d}}'
+>
+</div>
+
+<div
+  class='a-first-class
+    {{if this.optionOne "optionOne"}}
+    {{if this.optionTwo "optionTwo"}}
+    {{if this.optionThree "optionThree"}}
+    {{if this.optionFour "optionFour"}}
+    {{if this.optionFive "optionFive"}}
+    {{this.class}}'
+  ...attributes
+>
+</div>
+
+<div
+  class='a-first-class
+    {{if this.optionOne "optionOne"}}
+    {{if this.optionTwo "optionTwo"}}
+    {{if this.optionThree "optionThree"}}
+    {{if this.optionFour "optionFour"}}
+    {{if this.optionFive "optionFive"}}
+    {{this.class}}'
+  ...attributes
+>
+</div>
+
+<div>
+  {{classic-component-with-many-properties
+    class='hello'
+    param=this.someValue
+    secondParam=this.someValue
+    thirdParam=this.someValue
+  }}
+</div>
+
+<div>
+  {{yield
+    (hash
+      title=(component title)
+      header=(component header)
+      language=(component language)
+    )
+  }}
+</div>
+
+<div>
+  {{a-helper
+    'that takes some arguments'
+    this.anotherOne
+    'why not'
+    @aLastOneLongEnoughToBreak
+  }}
+</div>
+`;
+
+exports[`element-modifier-statement.hbs 1`] = `
+<div {{hello param hash=key}} {{goodbye param}}>
+  Hello
+</div>
+
+<div {{hello param param param param param param param param param param param param}}>
+  Hello
+</div>
+
+<div {{hello hashPair=value hashPair=value hashPair=value hashPair=value hashPair=value}}>
+  Hello
+</div>
+
+<div {{hello param param param param hashPair=value hashPair=value hashPair=value hashPair=value hashPair=value}}>
+  Hello
+</div>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<div {{hello param hash=key}} {{goodbye param}}>
+  Hello
+</div>
+
+<div
+  {{hello
+    param
+    param
+    param
+    param
+    param
+    param
+    param
+    param
+    param
+    param
+    param
+    param
+  }}
+>
+  Hello
+</div>
+
+<div
+  {{hello
+    hashPair=value
+    hashPair=value
+    hashPair=value
+    hashPair=value
+    hashPair=value
+  }}
+>
+  Hello
+</div>
+
+<div
+  {{hello
+    param
+    param
+    param
+    param
+    hashPair=value
+    hashPair=value
+    hashPair=value
+    hashPair=value
+    hashPair=value
+  }}
+>
+  Hello
+</div>
+`;
+
+exports[`element-modifier-statement.hbs 2`] = `
+<div {{hello param hash=key}} {{goodbye param}}>
+  Hello
+</div>
+
+<div {{hello param param param param param param param param param param param param}}>
+  Hello
+</div>
+
+<div {{hello hashPair=value hashPair=value hashPair=value hashPair=value hashPair=value}}>
+  Hello
+</div>
+
+<div {{hello param param param param hashPair=value hashPair=value hashPair=value hashPair=value hashPair=value}}>
+  Hello
+</div>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<div {{hello param hash=key}} {{goodbye param}}>
+  Hello
+</div>
+
+<div
+  {{hello
+    param
+    param
+    param
+    param
+    param
+    param
+    param
+    param
+    param
+    param
+    param
+    param
+  }}
+>
+  Hello
+</div>
+
+<div
+  {{hello
+    hashPair=value
+    hashPair=value
+    hashPair=value
+    hashPair=value
+    hashPair=value
+  }}
+>
+  Hello
+</div>
+
+<div
+  {{hello
+    param
+    param
+    param
+    param
+    hashPair=value
+    hashPair=value
+    hashPair=value
+    hashPair=value
+    hashPair=value
+  }}
+>
+  Hello
+</div>
+`;
+
+exports[`escaped.hbs 1`] = `
+an escaped mustache:
+\\{{my-component}}
+a non-escaped mustache:
+\\\\{{my-component}}
+another non-escaped mustache:
+\\\\\\{{my-component}}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+an escaped mustache:
+\\{{my-component}} a non-escaped mustache:
+\\\\{{my-component}}
+another non-escaped mustache: \\\\\\{{my-component}}
+`;
+
+exports[`escaped.hbs 2`] = `
+an escaped mustache:
+\\{{my-component}}
+a non-escaped mustache:
+\\\\{{my-component}}
+another non-escaped mustache:
+\\\\\\{{my-component}}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+an escaped mustache:
+\\{{my-component}} a non-escaped mustache:
+\\\\{{my-component}}
+another non-escaped mustache: \\\\\\{{my-component}}
+`;
+
+exports[`issue-8691.hbs 1`] = `
+<li class="
+{{if showAsCarousel "career-interests__pill--slide-item" "career-interests__pill"}}
+"></li>
+
+{{
+  yield
+  (hash
+    header=(component "fluid-table/thead")
+    body=(component "fluid-table/tbody")
+    th=(component "fluid-table/th")
+    td=(component "fluid-table/td")
+  )
+}}
+
+<LinkTo
+  @query={{
+    hash
+    filter=(compute this.computeFilterWithEmail this.filter campaignPic.userEmail)
+  }}
+  class="text-xs hover:underline"
+  data-test-user-email
+>
+  {{campaignPic.userEmail}}
+</LinkTo>
+
+{{if abcdefghijklmnopqrstuvwxyz (t 'abcdefghijklmnopq') (t 'abcdefghijklmnopq')}}
+
+{{#if (eq abcdefghijklmnopqrstuvwxyzabcdefgh abcdefghijklmnopqrstuvwxyzabcdefgh)}}
+foo{{/if}}
+
+{{some-helper abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijkl}}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<li
+  class="{{if
+      showAsCarousel
+      'career-interests__pill--slide-item'
+      'career-interests__pill'
+    }}
+    "
+></li>
+
+{{yield
+  (hash
+    header=(component "fluid-table/thead")
+    body=(component "fluid-table/tbody")
+    th=(component "fluid-table/th")
+    td=(component "fluid-table/td")
+  )
+}}
+
+<LinkTo
+  @query={{hash
+    filter=(compute
+      this.computeFilterWithEmail this.filter campaignPic.userEmail
+    )
+  }}
+  class="text-xs hover:underline"
+  data-test-user-email
+>
+  {{campaignPic.userEmail}}
+</LinkTo>
+
+{{if
+  abcdefghijklmnopqrstuvwxyz
+  (t "abcdefghijklmnopq")
+  (t "abcdefghijklmnopq")
+}}
+
+{{#if
+  (eq abcdefghijklmnopqrstuvwxyzabcdefgh abcdefghijklmnopqrstuvwxyzabcdefgh)
+}}
+  foo{{/if}}
+
+{{some-helper
+  abcdefghijklmnopqrstuvwxyz
+  abcdefghijklmnopqrstuvwxyz
+  abcdefghijkl
+}}
+`;
+
+exports[`issue-8691.hbs 2`] = `
+<li class="
+{{if showAsCarousel "career-interests__pill--slide-item" "career-interests__pill"}}
+"></li>
+
+{{
+  yield
+  (hash
+    header=(component "fluid-table/thead")
+    body=(component "fluid-table/tbody")
+    th=(component "fluid-table/th")
+    td=(component "fluid-table/td")
+  )
+}}
+
+<LinkTo
+  @query={{
+    hash
+    filter=(compute this.computeFilterWithEmail this.filter campaignPic.userEmail)
+  }}
+  class="text-xs hover:underline"
+  data-test-user-email
+>
+  {{campaignPic.userEmail}}
+</LinkTo>
+
+{{if abcdefghijklmnopqrstuvwxyz (t 'abcdefghijklmnopq') (t 'abcdefghijklmnopq')}}
+
+{{#if (eq abcdefghijklmnopqrstuvwxyzabcdefgh abcdefghijklmnopqrstuvwxyzabcdefgh)}}
+foo{{/if}}
+
+{{some-helper abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijkl}}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<li
+  class='{{if
+      showAsCarousel
+      "career-interests__pill--slide-item"
+      "career-interests__pill"
+    }}
+    '
+></li>
+
+{{yield
+  (hash
+    header=(component 'fluid-table/thead')
+    body=(component 'fluid-table/tbody')
+    th=(component 'fluid-table/th')
+    td=(component 'fluid-table/td')
+  )
+}}
+
+<LinkTo
+  @query={{hash
+    filter=(compute
+      this.computeFilterWithEmail this.filter campaignPic.userEmail
+    )
+  }}
+  class='text-xs hover:underline'
+  data-test-user-email
+>
+  {{campaignPic.userEmail}}
+</LinkTo>
+
+{{if
+  abcdefghijklmnopqrstuvwxyz
+  (t 'abcdefghijklmnopq')
+  (t 'abcdefghijklmnopq')
+}}
+
+{{#if
+  (eq abcdefghijklmnopqrstuvwxyzabcdefgh abcdefghijklmnopqrstuvwxyzabcdefgh)
+}}
+  foo{{/if}}
+
+{{some-helper
+  abcdefghijklmnopqrstuvwxyz
+  abcdefghijklmnopqrstuvwxyz
+  abcdefghijkl
+}}
+`;
