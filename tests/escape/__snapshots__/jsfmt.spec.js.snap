@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`backslashes.hbs 1`] = `
+<p>\\</p>
+<p>\\\\</p>
+<p>\\\\\\</p>
+<p>\\\\\\ \\\\{{non-escaped-moustache}}</p>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<p>\\</p>
+<p>\\\\</p>
+<p>\\\\\\</p>
+<p>\\\\\\ \\\\{{non-escaped-moustache}}</p>
+`;
+
+exports[`backslashes-in-attributes.hbs 1`] = `
+<p data-attr="backslash \\ in an attribute"></p>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<p data-attr="backslash \\ in an attribute"></p>
+`;
+
+exports[`html-entities.hbs 1`] = `
+<p>Some escaped characters: &lt; &gt; &amp;</p>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<p>Some escaped characters: &lt; &gt; &amp;</p>
+`;
+
+exports[`mustache.hbs 1`] = `
+<div title="foo \\{{"> \\{{ </div>
+<div class=" bar \\{{">\\{{</div>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<div title="foo \\{{"> \\{{ </div>
+<div class="bar \\{{">\\{{</div>
+`;
+
+exports[`numeric-entities.hbs 1`] = `
+<span class="stampFont" style="font-family: 'stampfont'">&#xf000;</span>
+
+Σ: &#931; &#0931; &#x3A3; &#x03A3; &#x3a3;
+
+[&amp;nbsp;] [&amp;#160;]
+
+<div title="A &amp; &#931;"></div>
+
+<a title="&#38;#160;"></a>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<span class="stampFont" style="font-family: 'stampfont'">&#xf000;</span>
+
+Σ: &#931; &#0931; &#x3A3; &#x03A3; &#x3a3; [&amp;nbsp;] [&amp;#160;]
+
+<div title="A &amp; &#931;"></div>
+
+<a title="&#38;#160;"></a>
+`;

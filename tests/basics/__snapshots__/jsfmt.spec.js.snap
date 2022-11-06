@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component.hbs 1`] = `
+<UserGreeting @name="Ricardo" @greeting="Olá" />
+{{@greeting}}, {{@name}}!
+
+<div>
+  <UserGreeting
+    @aVeryLongArgumentNameThatIsStillGoing={{@alsoAVeryLongArgument}}
+  />
+</div>
+
+<Form as |f|>
+  <f.input @title="hello" />
+  <f.input>hello</f.input>
+</Form>
+
+<this.label @title="hello" />
+
+<button onclick={{action next}}>Next</button>
+
+<button disabled class="disabled"></button>
+
+<button disabled=disabled class="disabled"></button>
+
+<img alt="" />
+
+<div ...attributes>Hello</div>
+
+<ul class="list-unstyled
+  one-tab">
+</ul>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<UserGreeting @name="Ricardo" @greeting="Olá" />
+{{@greeting}},
+{{@name}}!
+
+<div>
+  <UserGreeting
+    @aVeryLongArgumentNameThatIsStillGoing={{@alsoAVeryLongArgument}}
+  />
+</div>
+
+<Form as |f|>
+  <f.input @title="hello" />
+  <f.input>hello</f.input>
+</Form>
+
+<this.label @title="hello" />
+
+<button onclick={{action next}}>Next</button>
+
+<button disabled class="disabled"></button>
+
+<button disabled="disabled" class="disabled"></button>
+
+<img alt="" />
+
+<div ...attributes>Hello</div>
+
+<ul class="list-unstyled one-tab">
+</ul>
+`;
+
+exports[`literals.hbs 1`] = `
+{{mustache true}}
+{{mustache 5}}
+{{mustache undefined}}
+{{mustache null}}
+<!-- hello world -->
+{{! Mustache Comment}}
+{{!-- Mustache Comment }} --}}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+{{mustache true}}
+{{mustache 5}}
+{{mustache undefined}}
+{{mustache null}}
+<!-- hello world -->
+{{! Mustache Comment}}
+{{!-- Mustache Comment }} --}}
+`;
+
+exports[`named-block.hbs 1`] = `
+<ComponentWithNamedBlocks>
+  <:first-named-block></:first-named-block>
+  <:second-named-block> </:second-named-block>
+  <:named-block-with-comment>{{! Do not convert to an empty element}}</:named-block-with-comment>
+  <:named-block-with-content>Hello</:named-block-with-content>
+</ComponentWithNamedBlocks>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<ComponentWithNamedBlocks>
+  <:first-named-block></:first-named-block>
+  <:second-named-block> </:second-named-block>
+  <:named-block-with-comment
+  >{{! Do not convert to an empty element}}</:named-block-with-comment>
+  <:named-block-with-content>Hello</:named-block-with-content>
+</ComponentWithNamedBlocks>
+`;
+
+exports[`nested-path.hbs 1`] = `
+<div class="entry">
+  <h1>{{title}}</h1>
+  <h2>By {{author.name}}</h2>
+
+  <div class="body">
+    {{body}}
+  </div>
+</div>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<div class="entry">
+  <h1>{{title}}</h1>
+  <h2>By {{author.name}}</h2>
+
+  <div class="body">
+    {{body}}
+  </div>
+</div>
+`;
+
+exports[`raw.hbs 1`] = `
+<p>{{{raw}}}</p>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<p>{{{raw}}}</p>
+`;

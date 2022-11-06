@@ -1,11 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`attribute.hbs format 1`] = `
-====================================options=====================================
-parsers: ["glimmer"]
-printWidth: 80
-                                                                                | printWidth
-=====================================input======================================
+exports[`attribute.hbs 1`] = `
 <div title='
 
   a title with random
@@ -39,8 +34,7 @@ printWidth: 80
   and {{mustaches}}
 
 '></div>
-
-=====================================output=====================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 <div
   title="
 
@@ -82,15 +76,9 @@ printWidth: 80
 
 "
 ></div>
-================================================================================
 `;
 
-exports[`class-name.hbs format 1`] = `
-====================================options=====================================
-parsers: ["glimmer"]
-printWidth: 80
-                                                                                | printWidth
-=====================================input======================================
+exports[`class-name.hbs 1`] = `
 <div class='class and other'></div>
 <div class=' class and other '></div>
 <div CLASs=' class and other '></div>
@@ -118,8 +106,7 @@ weirdly formatted
 
 <Foo class="
 "/>
-
-=====================================output=====================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 <div class="class and other"></div>
 <div class="class and other"></div>
 <div CLASs="class and other"></div>
@@ -128,15 +115,9 @@ weirdly formatted
 <p CLASS="a list of weirdly formatted {{this.classes}}">String</p>
 
 <Foo class="" />
-================================================================================
 `;
 
-exports[`order.hbs format 1`] = `
-====================================options=====================================
-parsers: ["glimmer"]
-printWidth: 80
-                                                                                | printWidth
-=====================================input======================================
+exports[`order.hbs 1`] = `
 <MyComponent
   {{! this is a comment for arg 1}}
   @arg1="hello"
@@ -149,8 +130,7 @@ printWidth: 80
   @arg5="hello"
   ...arguments
 />
-
-=====================================output=====================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 <MyComponent
   {{! this is a comment for arg 1}}
   @arg1="hello"
@@ -163,20 +143,12 @@ printWidth: 80
   @arg5="hello"
   ...arguments
 />
-================================================================================
 `;
 
-exports[`quotes.hbs format 1`] = `
-====================================options=====================================
-parsers: ["glimmer"]
-printWidth: 80
-                                                                                | printWidth
-=====================================input======================================
+exports[`quotes.hbs 1`] = `
 <div title="'' {{ foo }}"></div>
 <div title='"" {{ bar }}'></div>
-
-=====================================output=====================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 <div title="'' {{foo}}"></div>
 <div title='"" {{bar}}'></div>
-================================================================================
 `;
