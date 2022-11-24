@@ -2,8 +2,7 @@ const {format} = require('prettier')
 const plugin = require('./src/plugin/index')
 
 const text = `
-{{#if imageList.[0] hello.a}}
-{{/if}}
+<div {{{valid}}}>{{{hello}}}</div>
 `
 
 const str = format(text, {

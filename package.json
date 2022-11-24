@@ -1,11 +1,17 @@
 {
   "name": "prettier-plugin-lehbs",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "",
   "main": "src/plugin/index.js",
   "scripts": {
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "build:standalone": "webpack -c webpack.config.js"
   },
+  "files": [
+    "src",
+    "vendors",
+    "standalone.js"
+  ],
   "keywords": [
     "prettier",
     "lehbs",
@@ -17,7 +23,7 @@
   "license": "MIT",
   "dependencies": {
     "@glimmer/syntax": "0.84.2",
-    "lehbs-parser": "^0.0.5",
+    "lehbs-parser": "^0.0.6",
     "lines-and-columns": "2.0.3",
     "linguist-languages": "7.21.0",
     "lodash": "^4.17.21",
@@ -28,6 +34,8 @@
   },
   "devDependencies": {
     "jest": "^24.0.0",
-    "jest-watch-typeahead": "^0.2.1"
+    "jest-watch-typeahead": "^0.2.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^4.10.0"
   }
 }
