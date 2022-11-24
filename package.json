@@ -1,11 +1,12 @@
 {
   "name": "prettier-plugin-lehbs",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
   "main": "src/plugin/index.js",
   "scripts": {
-    "test": "jest --watch",
-    "build:standalone": "webpack -c webpack.config.js"
+    "jest": "jest --watch",
+    "build:standalone": "webpack -c webpack.config.js",
+    "test": "node test.js"
   },
   "files": [
     "src",
