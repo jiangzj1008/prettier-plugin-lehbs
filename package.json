@@ -6,7 +6,8 @@
   "scripts": {
     "jest": "jest --watch",
     "build:standalone": "webpack -c webpack.config.js",
-    "test": "node test.js"
+    "test": "node test.js",
+    "release": "release-it"
   },
   "files": [
     "src",
@@ -36,6 +37,7 @@
   "devDependencies": {
     "jest": "^24.0.0",
     "jest-watch-typeahead": "^0.2.1",
+    "release-it": "^15.5.0",
     "webpack": "^5.75.0",
     "webpack-cli": "^4.10.0"
   }
