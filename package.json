@@ -7,7 +7,7 @@
     "jest": "jest --watch",
     "build:standalone": "webpack -c webpack.config.js",
     "test": "node test.js",
-    "update": "node scripts/install.mjs",
+    "update": "zx scripts/prepare.mjs",
     "release": "release-it"
   },
   "files": [
@@ -38,6 +38,7 @@
     "jest-watch-typeahead": "^0.2.1",
     "release-it": "^15.5.0",
     "webpack": "^5.75.0",
-    "webpack-cli": "^4.10.0"
+    "webpack-cli": "^4.10.0",
+    "zx": "4.2.0"
   }
 }
