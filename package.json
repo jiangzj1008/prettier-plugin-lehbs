@@ -7,6 +7,7 @@
     "jest": "jest --watch",
     "build:standalone": "webpack -c webpack.config.js",
     "test": "node test.js",
+    "update": "node scripts/install.mjs",
     "release": "release-it"
   },
   "files": [
@@ -24,15 +25,13 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@glimmer/syntax": "0.84.2",
     "lehbs-parser": "^0.0.6",
     "lines-and-columns": "2.0.3",
     "linguist-languages": "7.21.0",
     "lodash": "^4.17.21",
     "outdent": "0.8.0",
     "prettier": "^2.7.1",
-    "semver": "7.3.7",
-    "toml": "^2.3.5"
+    "semver": "7.3.7"
   },
   "devDependencies": {
     "jest": "^24.0.0",
