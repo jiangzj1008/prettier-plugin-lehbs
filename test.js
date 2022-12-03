@@ -2,7 +2,13 @@ const {format} = require('prettier')
 const plugin = require('./src/plugin/index')
 
 const text = `
-<div {{{valid}}}>{{{hello}}}</div>
+{{#schema}}
+{
+  "name": {
+    "zh-hans-cn": "图片拼接"
+  }
+}
+{{/schema}}
 `
 
 const str = format(text, {

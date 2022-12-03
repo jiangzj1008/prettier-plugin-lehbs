@@ -143,6 +143,26 @@ function myprint(path, options, print) {
     case "BlockStatement": {
       const pp = path.getParentNode(1);
 
+      // json schema
+      if (node.path.original === 'schema') {
+        const child = node.program.body[0]
+        if (child.type !== "TextNode") {
+          throw new Error("schema helper only support TextNode child, but got" + JSON.stringify(child.type));
+        }
+        const jsonStr = child.chars
+        const jsonObj = JSON.parse(jsonStr)
+        const newStr = JSON.stringify(jsonObj, null, 2)
+        return [
+          printOpenBlock(path, print),
+          group([
+            hardline,
+            indent(newStr),
+            hardline,
+            printCloseBlock(path, print, options),
+          ]),
+        ];
+      }
+
       const isElseIfLike =
         pp &&
         pp.inverse &&
