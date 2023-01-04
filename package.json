@@ -1,6 +1,6 @@
 {
   "name": "prettier-plugin-lehbs",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "",
   "main": "src/plugin/index.js",
   "scripts": {
