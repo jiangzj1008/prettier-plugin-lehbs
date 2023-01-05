@@ -12,7 +12,7 @@ const {
     line,
     softline,
   },
-  utils: { getDocParts, replaceTextEndOfLine },
+  utils: { getDocParts, replaceTextEndOfLine, removeLines },
 } = require("prettier").doc;;
 const { getPreferredQuote, isNonEmptyArray } = require("../common/util.js");
 const { locStart, locEnd } = require("./loc.js");
@@ -163,6 +163,8 @@ function myprint(path, options, print) {
         ];
       }
 
+      let docRes = []
+
       const isElseIfLike =
         pp &&
         pp.inverse &&
@@ -171,21 +173,29 @@ function myprint(path, options, print) {
         pp.inverse.body[0].path.parts[0] === pp.path.parts[0];
 
       if (isElseIfLike) {
-        return [
+        docRes = [
           printElseIfLikeBlock(path, print, pp.inverse.body[0].path.parts[0]),
           printProgram(path, print, options),
           printInverse(path, print, options),
         ];
+      } else {
+        docRes = [
+          printOpenBlock(path, print),
+          group([
+            printProgram(path, print, options),
+            printInverse(path, print, options),
+            printCloseBlock(path, print, options),
+          ]),
+        ]
       }
 
-      return [
-        printOpenBlock(path, print),
-        group([
-          printProgram(path, print, options),
-          printInverse(path, print, options),
-          printCloseBlock(path, print, options),
-        ]),
-      ];
+      // 在 attribute 里面的时候, 把 line 去掉
+      const attrName = getCurrentAttributeName(path);
+      if (attrName) {
+        return removeLines(docRes)
+      }
+
+      return docRes;
     }
 
     case "ElementModifierStatement": {
@@ -265,7 +275,9 @@ function myprint(path, options, print) {
       if (attrName) {
         // TODO: format style and srcset attributes
         if (attrName === "class") {
-          const formattedClasses = text.trim().split(/\s+/).join(" ");
+          let formattedClasses = text.trim().split(/\s+/).join(" ");
+
+          let classArr = formattedClasses.split(" ")
 
           let leadingSpace = false;
           let trailingSpace = false;
@@ -283,6 +295,15 @@ function myprint(path, options, print) {
               formattedClasses !== ""
             ) {
               trailingSpace = true;
+            }
+            if (
+              isNextNodeOfSomeType(path, ["MustacheStatement", "BlockStatement"]) &&
+              !/\s$/.test(text) &&
+              classArr.length >= 2
+            ) {
+              const lastClass = classArr[classArr.length - 1]
+              formattedClasses = classArr.slice(0, classArr.length - 1).join(" ")
+              formattedClasses = [formattedClasses, line, lastClass]
             }
           }
 

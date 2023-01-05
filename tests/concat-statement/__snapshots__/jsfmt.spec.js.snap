@@ -20,7 +20,17 @@ exports[`concat-statement.hbs 1`] = `
 <div class=" class-i       {{myClass}}class-j"></div>
 <div class="class-k {{myClass}}   class-l"></div>
 <div class="  class-m   {{myClass}}     class-n {{myClass}}class-o   "></div>
-<div class="  class-p  class-q"></div>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<div class="  class-p  class-q"></div>
+
+<div 
+  class="product grid grid-cols-1 {{hello}}grid-cols-2-desktop grid-cols-2-desktop{{gua}}
+    product--{{ settings.product_image_pc_position }}
+    product--{{ settings.product_image_pc_show_style }}
+    product--mobile-{{ section.settings.product_mobile_thumbnail_image_hide }}
+    product--{{ settings.product_image_size }} 
+    {{#if (boolean (size product.media) '>' 0) }}grid--2-col-tablet{{else}}product--no-media{{/if}}">
+</div>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 <div class="hello {{if goodbye true}}">
   Hello
 </div>
@@ -48,6 +58,18 @@ exports[`concat-statement.hbs 1`] = `
 <div class="class-k {{myClass}} class-l"></div>
 <div class="class-m {{myClass}} class-n {{myClass}}class-o"></div>
 <div class="class-p class-q"></div>
+
+<div
+  class="product grid grid-cols-1
+    {{hello}}grid-cols-2-desktop
+    grid-cols-2-desktop{{gua}}
+    product--{{settings.product_image_pc_position}}
+    product--{{settings.product_image_pc_show_style}}
+    product--mobile-{{section.settings.product_mobile_thumbnail_image_hide}}
+    product--{{settings.product_image_size}}
+    {{#if (boolean (size product.media) '>' 0)}}grid--2-col-tablet{{else}}product--no-media{{/if}}"
+>
+</div>
 `;
 
 exports[`concat-statement.hbs 2`] = `
@@ -70,7 +92,17 @@ exports[`concat-statement.hbs 2`] = `
 <div class=" class-i       {{myClass}}class-j"></div>
 <div class="class-k {{myClass}}   class-l"></div>
 <div class="  class-m   {{myClass}}     class-n {{myClass}}class-o   "></div>
-<div class="  class-p  class-q"></div>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<div class="  class-p  class-q"></div>
+
+<div 
+  class="product grid grid-cols-1 {{hello}}grid-cols-2-desktop grid-cols-2-desktop{{gua}}
+    product--{{ settings.product_image_pc_position }}
+    product--{{ settings.product_image_pc_show_style }}
+    product--mobile-{{ section.settings.product_mobile_thumbnail_image_hide }}
+    product--{{ settings.product_image_size }} 
+    {{#if (boolean (size product.media) '>' 0) }}grid--2-col-tablet{{else}}product--no-media{{/if}}">
+</div>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 <div class='hello {{if goodbye true}}'>
   Hello
 </div>
@@ -98,6 +130,18 @@ exports[`concat-statement.hbs 2`] = `
 <div class='class-k {{myClass}} class-l'></div>
 <div class='class-m {{myClass}} class-n {{myClass}}class-o'></div>
 <div class='class-p class-q'></div>
+
+<div
+  class='product grid grid-cols-1
+    {{hello}}grid-cols-2-desktop
+    grid-cols-2-desktop{{gua}}
+    product--{{settings.product_image_pc_position}}
+    product--{{settings.product_image_pc_show_style}}
+    product--mobile-{{section.settings.product_mobile_thumbnail_image_hide}}
+    product--{{settings.product_image_size}}
+    {{#if (boolean (size product.media) ">" 0)}}grid--2-col-tablet{{else}}product--no-media{{/if}}'
+>
+</div>
 `;
 
 exports[`in-attr-node.hbs 1`] = `
@@ -118,7 +162,8 @@ exports[`in-attr-node.hbs 1`] = `
   href="a-very-long-href-from-a-third-party-marketing-platform{{id}}longer-than-eighty-chars"
 >Link</a>
 <button
-  class="uk-padding-remove uk-button uk-button-default uk-button-small uk-width-1-{{intl.locales.length}}
+  class="uk-padding-remove uk-button uk-button-default uk-button-small
+    uk-width-1-{{intl.locales.length}}
     {{if (contains locale intl.locale) 'uk-button-primary'}}"
 >
   test
@@ -143,7 +188,8 @@ exports[`in-attr-node.hbs 2`] = `
   href='a-very-long-href-from-a-third-party-marketing-platform{{id}}longer-than-eighty-chars'
 >Link</a>
 <button
-  class='uk-padding-remove uk-button uk-button-default uk-button-small uk-width-1-{{intl.locales.length}}
+  class='uk-padding-remove uk-button uk-button-default uk-button-small
+    uk-width-1-{{intl.locales.length}}
     {{if (contains locale intl.locale) "uk-button-primary"}}'
 >
   test

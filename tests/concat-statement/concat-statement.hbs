@@ -18,3 +18,12 @@
 <div class="class-k {{myClass}}   class-l"></div>
 <div class="  class-m   {{myClass}}     class-n {{myClass}}class-o   "></div>
 <div class="  class-p  class-q"></div>
+
+<div 
+  class="product grid grid-cols-1 {{hello}}grid-cols-2-desktop grid-cols-2-desktop{{gua}}
+    product--{{ settings.product_image_pc_position }}
+    product--{{ settings.product_image_pc_show_style }}
+    product--mobile-{{ section.settings.product_mobile_thumbnail_image_hide }}
+    product--{{ settings.product_image_size }} 
+    {{#if (boolean (size product.media) '>' 0) }}grid--2-col-tablet{{else}}product--no-media{{/if}}">
+</div>
